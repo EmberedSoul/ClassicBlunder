@@ -132,7 +132,8 @@ mob
 				var/obj/Skills/Buffs/SlotlessBuffs/RoyalGuard/RG = locate(/obj/Skills/Buffs/SlotlessBuffs/RoyalGuard) in defender.contents
 				if(RG)
 					RG.SuccessfulParry = 2
-					RG.RoyalMeter = min(RG.RoyalMeter + (val * glob.ROYAL_GUARD_CHARGE_MULT), 100)
+					var/meterGain = max(val * glob.ROYAL_GUARD_CHARGE_MULT, 1)
+					RG.RoyalMeter = RG.RoyalMeter + meterGain
 					val = 0
 					defender.client.updateRGMeter()
 			if(val==0)
@@ -367,7 +368,7 @@ mob
 			if(FightingSeriously(src, defender) && src.isRace(/race/demi_fiend))
 				for(var/obj/Items/Magatama/M in src)
 					if(M.suffix == "*Equipped*" && M.mastery < 100)
-						M.gainMastery(val * 0.002)
+						M.gainMastery(val * 0.02)
 
 			if(passive_handler.Get("CorruptAffected"))
 				if(demon)
