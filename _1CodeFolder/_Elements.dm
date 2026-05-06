@@ -108,7 +108,7 @@ proc
 				if("Ultima")
 					DamageMod+=2
 				if("Death")
-					if(Attacker.passive_handler.Get("Death Incarnate"))
+					if(Attacker.passive_handler.Get("Aspect of Death"))
 						DamageMod+=3
 				if("Love")
 					DamageMod+=3
@@ -192,7 +192,7 @@ proc
 						Defender.AddShock(2*DebuffIntensity*glob.SHOCK_INTENSITY, Attacker)
 					if("Death")
 						if(prob(glob.CHAOS_CHANCE))
-							if(Attacker.passive_handler.Get("Death Incarnate"))
+							if(Attacker.passive_handler.Get("Aspect of Death"))
 								Defender.AddDoom(1, Attacker, 1)
 							else
 								Defender.AddDoom(1, Attacker, 0)
@@ -652,7 +652,7 @@ mob
 				OMsg(src, "<b><font color='purple'>The bell tolls for [src],</font color></b>")
 				src.DownToEarth=100
 				if(DI)
-					src.Health*=0.75
+					src.Health*=0.60
 				if(src.HasGodKi()||src.HasMaouKi())
 					src<<"<b><font color='red'>Death comes for all, even those with the power of Gods. Your divinity has been temporarily forfeit.</font color></b>"
 

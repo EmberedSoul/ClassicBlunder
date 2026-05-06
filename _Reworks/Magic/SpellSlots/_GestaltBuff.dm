@@ -7,13 +7,13 @@
 	var/GestaltTier=1
 	if(Saga || CyberCancel) return 1;
 	var/p = get_potential();
-	if(p < 25) 
+	if(p < 25)
 		GestaltTier = 1
-	else if(p < glob.AdvancedElementPotential) 
+	else if(p < glob.AdvancedElementPotential)
 		GestaltTier = 2
-	else 
+	else
 		GestaltTier = 3
-	if(Saga&&!isRace(DEMIFIEND))&&!isRace(NOBODY) || CyberCancel || Secret&&!isRace(ELDRITCH))
+	if((Saga&&!isRace(DEMIFIEND))&&!isRace(NOBODY) || CyberCancel || Secret&&!isRace(ELDRITCH))
 		if(!isRace(HUMAN))
 			GestaltTier -=1
 	if(GestaltTier<1) GestaltTier=1
