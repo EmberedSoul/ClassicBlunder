@@ -1,5 +1,6 @@
 // Check Items.dm and sift through the spaghetti to find how this item is equipped and unequipped via the Equip proc and the ObjectUse proc
 // (I fucking hate this shit dude)
+// Flask making and adjusting verb is in _UtilitX.dm at line 1483 (Concoct_Flask)
 #define BASE_MAX_CHARGES 2 // How many charges we start out with
 #define FLASK_CD
 
@@ -117,4 +118,3 @@ mob/proc/GetMaxCharges() // adds tier to the define
 
 mob/proc/GetFlaskCD() // Determines our cooldown
     return FLASK_CD - (equippedFlask.Tier*60) // T0 = FLASK_CD, T1 = FLASK_CD-1 MIN., T2 = FLASK_CD-2MIN. This will probably be rebalanced at some point
-    
