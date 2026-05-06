@@ -4,11 +4,19 @@
 // adjust() dynamically sets stats and passives based on current tier
 
 /mob/proc/getGestaltTier()
+	var/GestaltTier=1
 	if(Saga || CyberCancel) return 1;
 	var/p = get_potential();
-	if(p < 25) return 1;
-	else if(p < glob.AdvancedElementPotential) return 2;
-	else return 3;
+	if(p < 25) 
+		GestaltTier = 1
+	else if(p < glob.AdvancedElementPotential) 
+		GestaltTier = 2
+	else 
+		GestaltTier = 3
+	if(Saga&&!isRace(DEMIFIEND))&&!isRace(NOBODY) || CyberCancel || Secret&&!isRace(ELDRITCH)) 
+		GestaltTier -=1
+	if(GestaltTier<1) GestaltTier=1
+	return GestaltTier
 
 /obj/Skills/Buffs/SpecialBuffs/Fire_Gestalt_Buff
 	MagicNeeded = 1
