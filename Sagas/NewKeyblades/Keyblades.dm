@@ -178,6 +178,8 @@ proc/
 				return "Light"
 			if("Blind Justice")
 				return "Light"
+			if("Soul Eater")
+				return "Light"	
 //medium
 			if("Oblivion")
 				return "Medium"
@@ -234,6 +236,8 @@ proc/
 			if("Two Become One")
 				return 1.25
 			if("Blind Justice")
+				return 1.25
+			if("Soul Eater")
 				return 1.25
 //medium
 			if("Oblivion")
@@ -292,6 +296,8 @@ proc/
 				return 2
 			if("Blind Justice")
 				return 2
+			if("Soul Eater")
+				return 2
 //medium
 			if("Oblivion")
 				return 1.5
@@ -348,6 +354,8 @@ proc/
 			if("Two Become One")
 				return 2.5
 			if("Blind Justice")
+				return 2.5
+			if("Soul Eater")
 				return 2.5
 //medium
 			if("Oblivion")
@@ -409,6 +417,8 @@ proc/
 					return "Dark"
 			if("Blind Justice")
 				return "Truth"
+			if("Soul Eater")
+				return "Dark"
 //medium
 			if("Oblivion")
 				return "Dark"
@@ -466,6 +476,8 @@ proc/
 				return 'Two Become One.dmi'
 			if("Blind Justice")
 				return 'Blind Justice.dmi'
+			if("Soul Eater")
+				return 'Soul_Eater.dmi'
 //medium
 			if("Oblivion")
 				return 'Oblivion.dmi'
@@ -523,6 +535,8 @@ proc/
 				return 'Two Become One - Sync.dmi'
 			if("Blind Justice")
 				return 'Blind Justice - Sync.dmi'
+			if("Soul Eater")
+				return 'Soul_Eater - Sync.dmi'
 //medium
 			if("Oblivion")
 				return 'OblivionSync.dmi'
@@ -594,6 +608,9 @@ proc/
 			if("Blind Justice")
 				KeybladePassives=list("PULock" = 1, "PureDamage" = 3+(Boost/2), "PureReduction" = -3+(Boost/2))
 				return KeybladePassives
+			if("Soul Eater")
+				KeybladePassives=list("PULock" = 1, "Soulfire" = 0.75+(Boost/2), "KillerInstinct" = 1, "SpiritSword" = 0.2*Boost)
+				return KeybladePassives
 //medium
 			if("Oblivion")
 				KeybladePassives=list("PULock" = 1, "AbyssMod" = 1+(2*Boost),"EnergyGeneration" = 3+Boost, "Momentum" = 2,"SpiritFlow" =1+round(Boost/3))
@@ -602,7 +619,7 @@ proc/
 				KeybladePassives=list("PULock" = 1, "Steady" = 3, "Brutalize" = Boost, "Extend" = 1, "Conductor" = -50, "DemonicDurability" = Boost, "AngerAdaptiveForce" = 0.2*Boost)
 				return KeybladePassives
 			if("No Name")
-				KeybladePassives=list("PULock" = 1, "HardStyle" = 1)
+				KeybladePassives=list("PULock" = 1, "HardStyle" = 1+Boost, "Void" = 1, "StealsStats" = 1)
 				return KeybladePassives
 			if("Lionheart")
 				KeybladePassives=list("PULock" = 1, "SpiritPower" = round(Boost/5), "Persistence" = 1+(Boost/2), "UnderDog" = 1+Boost)
@@ -624,7 +641,7 @@ proc/
 				KeybladePassives=list("PULock" = 1, "Harden" = 3, "CallousedHands" = Boost/10)
 				return KeybladePassives
 			if("Chaos Ripper")
-				KeybladePassives=list("PULock" = 1, "Extend" = 2, "Half-Sword" = 5, "Zornhau" = 5, "HardStyle" = 1)
+				KeybladePassives=list("PULock" = 1, "Extend" = 0.75+Boost, "Half-Sword" = 5, "Zornhau" = 5, "HardStyle" = 0.5+Boost)
 				return KeybladePassives
 			if("One Winged Angel")
 				KeybladePassives=list("PULock" = 1, "CriticalChance" = 5+(Boost*2), "CriticalDamage"= 0.3+(Boost/10))
